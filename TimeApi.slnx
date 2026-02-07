@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="TimeApi.Tests/TimeApi.Tests/TimeApi.Tests.csproj" Id="5e3f7ab2-c21b-4354-972f-df95ca06634c" />
   <Project Path="TimeApi/TimeApi.csproj" />
 </Solution>
