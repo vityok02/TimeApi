@@ -23,7 +23,7 @@ app.MapHealthChecks("/health");
 
 app.MapGet("/time", () =>
 {
-    var time = new TimeResponse(DateTime.MaxValue, "UTC");
+    var time = new TimeResponse(DateTime.UtcNow, "UTC");
     return TypedResults.Ok(time);
 }).WithName("CurrentTime");
 
