@@ -1,7 +1,8 @@
 using Scalar.AspNetCore;
 using TimeApi;
 
-var builder = WebApplication.CreateBuilder(args);
+var builder = WebApplication
+    .CreateBuilder(args);
 
 builder.Services.AddProblemDetails();
 builder.Services.AddOpenApi();
@@ -22,7 +23,7 @@ app.MapHealthChecks("/health");
 
 app.MapGet("/time", () =>
 {
-    var time = new TimeResponse(DateTime.UtcNow, "UTC");
+    var time = new TimeResponse(DateTime.MaxValue, "UTC");
     return TypedResults.Ok(time);
 }).WithName("CurrentTime");
 
