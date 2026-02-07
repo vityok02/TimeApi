@@ -2,8 +2,9 @@
 using Microsoft.AspNetCore.Mvc.Testing;
 using System.Net;
 using System.Net.Http.Json;
+using TimeService.Api;
 
-namespace TimeApi.Tests;
+namespace TimeService.Tests;
 
 public class TimeApiIntegrationTests
     : IClassFixture<WebApplicationFactory<Program>>
