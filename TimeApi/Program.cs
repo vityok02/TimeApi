@@ -1,24 +1,30 @@
 using Scalar.AspNetCore;
+using TimeApi;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddProblemDetails();
 builder.Services.AddOpenApi();
+builder.Services.AddHealthChecks();
 
 var app = builder.Build();
 
-app.MapOpenApi();
-
-app.MapScalarApiReference();
+if (app.Environment.IsDevelopment())
+{
+    app.MapOpenApi();
+    app.UseDeveloperExceptionPage();
+    app.MapScalarApiReference();
+}
 
 app.UseHttpsRedirection();
 
+app.MapHealthChecks("/health");
+
 app.MapGet("/time", () =>
 {
-    return new
-    {
-        CurrentTime = DateTime.UtcNow,
-        TimeZone = "UTC"
-    };
-});
+    var time = new Time(DateTime.UtcNow, "UTC");
 
-app.Run();
+    return TypedResults.Ok(time);
+}).WithName("CurrentTime");
+
+await app.RunAsync();
