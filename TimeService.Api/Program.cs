@@ -1,5 +1,5 @@
 using Scalar.AspNetCore;
-using TimeApi;
+using TimeService.Api;
 
 var builder = WebApplication
     .CreateBuilder(args);

@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="TimeService.Api/TimeService.Api.csproj" />
+  <Project Path="TimeService.Tests/TimeApi.Tests/TimeService.Tests.csproj" />
+</Solution>
