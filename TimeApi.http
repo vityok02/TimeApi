@@ -1,0 +1,6 @@
+@TimeApi_HostAddress = http://localhost:5184
+
+GET {{TimeApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
