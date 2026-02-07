@@ -10,7 +10,7 @@ env:
   AZURE_WEBAPP_NAME: time-service
   AZURE_WEBAPP_PACKAGE_PATH: './TimeApi/publish'
   DOTNET_VERSION: '10.X'
-  SOLUTION_PATH: 'TimeApi.sln'
+  SOLUTION_PATH: 'TimeApi.slnx'
   API_PROJECT_PATH: 'TimeApi'
   PUBLISH_DIR: './publish'
 
